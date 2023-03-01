@@ -1,7 +1,6 @@
 import datetime
 import time
 
-
 st = input('Insert time to count down (h:m:s) ')
 
 if len(st) == 8:
@@ -22,17 +21,11 @@ if len(st) == 8:
         if date_time_obj >= l:
             s += 1
             x = date_time_obj - l
-            print(x)
+            remaining_time = '{:02d}:{:02d}:{:02d}'.format(x.seconds//3600, (x.seconds//60)%60, x.seconds%60)
+            print(remaining_time, end='\r')
             time.sleep(1)
         else:
             print('Time is over !')
             break
-
-
 else:
-
     print('please write input with correct format (00:00:00)')
-
-
-
-
